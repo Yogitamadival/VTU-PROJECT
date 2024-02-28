@@ -7,12 +7,32 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomeScreen from './Screens/HomeScreen';
 import AboutUs from './Screens/AboutUs';
+import Admission from './Screens/Admission'
+import CircularNotification from './Screens/CircularNotification'
+import CertificateIssused from './Screens/CertificateIssused'
+import ExaminationGuidlines from './Screens/ExaminationGuidlines'
+import ExaminationApplication from './Screens/ExaminationApplication'
+import Result from './Screens/Result'
+// import ComputerScienceEngg  from './Screens/ComputerScienceEngg '
+// import CivilEngg  from './Screens/CivilEngg '
+// import ElectronicsCommunicationEngg  from './Screens/ElectronicsCommunicationEngg '
+// import LoginAsAdmin from './Screens/LoginAsAdmin '
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index = {HomeScreen} path='/' element={<HomeScreen />}/>
       <Route path='/about' element={<AboutUs />}/>
+      <Route path='/admission' element={<Admission />}/>
+      <Route path='/Circular' element={<CircularNotification />}/>
+      <Route path='/Certificate' element={<CertificateIssused />}/>
+      <Route path='/Guidlines' element={<ExaminationGuidlines />}/>
+      <Route path='/Application' element={<ExaminationApplication />}/>
+      <Route path='/results' element={<Result />}/>
+      {/* <Route path='/computerscience' element={<ComputerScienceEngg />}/>
+      <Route path='/Civil Engg' element={<CivilEngg />}/>
+      <Route path='/Electronics' element={<ElectronicsCommunicationEngg />}/> */}
+      {/* <Route path='/login' element={<LoginAsAdmin />}/> */}
     </Route>
   )
 )

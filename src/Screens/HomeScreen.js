@@ -1,12 +1,13 @@
 import React from 'react';
 import { Carousel,Row,Col,Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
     return(
         <>
             <div>
                 <marquee> VTU Results 2024 out - Check Exam results here!!!
-                    <a href='#'>Click here...</a>Best of Luck!!!</marquee>
+                    <Link to='/results'>Click here...</Link>Best of Luck!!!</marquee>
             </div>
 
             <div>
@@ -56,7 +57,7 @@ const HomeScreen = () => {
                     <Row>
                         <Col>
                             
-                                <h3><a href='#'> Vision</a></h3>
+                                <h3><Link to='/about'> Vision</Link></h3>
                                 <p className='p-style'>To plan the development of technical education, to establish value-based
                                     and need-based education and training in engineering and technoligy, 
                                     with a view to generate qualified and comprtent manpower,responsive
@@ -68,12 +69,13 @@ const HomeScreen = () => {
                                     with a view to generate qualified and comprtent manpower,responsive
                                     to technology and social needs
                                 </p>
-                                <Button variant='warning'>Read More</Button>
+                                
+                                <Link to='/about' className='btn btn-warning'>Read More</Link>
                         </Col>
 
                          <Col>
                             
-                                <h3 className='p-style'><a href='#'> Mission</a></h3>
+                                <h3 className='p-style'><Link to='/about'> Mission</Link></h3>
                                 <p>To plan the development of technical education, to establish value-based
                                     and need-based education and training in engineering and technoligy, 
                                     with a view to generate qualified and comprtent manpower,responsive
@@ -85,12 +87,12 @@ const HomeScreen = () => {
                                     with a view to generate qualified and comprtent manpower,responsive
                                     to technology and social needs
                                 </p>
-                                <Button variant='warning'>Read More</Button>
+                                <Link to='/about' className='btn btn-warning'>Read More</Link>
                         </Col>
 
                         <Col>
                             
-                                <h3 className='p-style'><a href='#'> Mandate</a></h3>
+                                <h3 className='p-style'><Link to='/about'> Mandate</Link></h3>
                                 <p>To plan the development of technical education, to establish value-based
                                     and need-based education and training in engineering and technoligy, 
                                     with a view to generate qualified and comprtent manpower,responsive
@@ -102,7 +104,7 @@ const HomeScreen = () => {
                                     with a view to generate qualified and comprtent manpower,responsive
                                     to technology and social needs
                                 </p>
-                                <Button variant='warning'>Read More</Button>
+                                <Link to='/about' className='btn btn-warning'>Read More</Link>
                         </Col>
                     </Row>
                 </div>
