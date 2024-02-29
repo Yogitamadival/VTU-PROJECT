@@ -26,3 +26,6 @@ marquee{
 .p-style{
   text-align: justify;
 }
+tr,td{
+  text-align: center;
+}

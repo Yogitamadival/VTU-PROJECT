@@ -1,0 +1,27 @@
+{
+    "studentInfo":[
+        {
+            "_id":1,
+            "registerId":"1STCS24009",
+            "name":"Vinoth",
+            "fatherName":"Ravi",
+            "collegeName":"Oxford University"
+        },
+        {
+            "_id":2,
+            "registerId":"1STEC24113",
+            "name":"John",
+            "fatherName":"Sam",
+            "collegeName":"Oxford University"
+        },
+        {
+            "_id":3,
+            "registerId":"1STCVE24341",
+            "name":"Alexa",
+            "fatherName":"David",
+            "collegeName":"Oxford University"
+        }
+    
+            
+    ]
+}
