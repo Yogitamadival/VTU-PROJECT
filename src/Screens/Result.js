@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useParams } from "react-router-dom";
 import {Row,Col,Form, Button,Alert} from "react-bootstrap";
 import axios from 'axios';
 
@@ -14,12 +14,12 @@ const Result = () => {
         if(registerInput === ''){
             setMessage("Please Enter Register no")
         }else{
-            axios.get('http://localhost:3001/studentInfo')
+            axios.get('http://localhost:3004/resultsInfo')
             .then((response) =>{
-                console.log("res,response")
+                console.log("res",response)
                 response.data.map((data) => {
                     if(data.registerId === registerInput){
-                        navigate(`/final/resultpage/${registerInput}`)
+                        navigate(`/resultpage/${registerInput}`)
                     }else{
                         setMessage("Invalid RegisterId")
                     }

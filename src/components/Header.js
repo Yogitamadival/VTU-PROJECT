@@ -56,6 +56,10 @@ const Header = () => {
         <LinkContainer to='/results'>
         <NavDropdown.Item href="/results">Result</NavDropdown.Item>
         </LinkContainer>
+
+        {/* <LinkContainer to='/resultpage'>
+        <NavDropdown.Item href="/resultpage">FinalResultScreen</NavDropdown.Item>
+        </LinkContainer> */}
        
       </NavDropdown>
 

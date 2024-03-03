@@ -1,76 +1,78 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {Container, Table } from "react-bootstrap";
+import axios from "axios";
 
-const TableData = () => {
+const TableData = ({studentId}) => {
+    console.log("id",studentId)
+
+    const[resultDetails,setResultDetails] = useState([])
+
+    useEffect(()=>{
+        axios.get('http://localhost:3004/resultsInfo')
+        .then((response) => {
+            console.log("ress", response.data)
+            let temp = []
+            temp = response.data.filter((d) => d.registerId === studentId )
+            setResultDetails(temp)
+        })
+        .catch((error) => console.log("err",error))
+    },[studentId])
+
+    console.log("state2",resultDetails)
+
+    const getTotalMarks = (value) => {
+        console.log("value",value)
+        let sum = 0
+        resultDetails.map((d) =>{
+            sum += parseInt(d[value])
+        })
+        return sum
+    }
+
     return(
+        
         <Container>
            <Table className="my-5" responsive bordered>
             <thead>
                 <tr>
-                    <th style={{textAlign:"center"}}>Sl No</th>
+                    <th>Sl No</th>
                     <th colSpan={2}>Subject
-                    <th style={{paddingLeft:"10rem",paddingRight:"8rem"}}>Code</th>
-                    <th style={{paddingLeft:"10rem",paddingRight:"8rem"}}>Subject</th>
+                    <th>Code</th>
+                    <th>Subject</th>
                     </th>
 
                     <th colSpan={3}>Examination Marks Obtained
-                    <th style={{padding:"0px 10rem"}}>Max</th>
-                    <th style={{padding:"0px 10rem"}}>Min</th>
-                    <th style={{padding:"0px 10rem"}}>Obtained</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Obtained</th>
                     </th>
 
-                    <th style={{padding:"0px 10rem"}}>Subject Result</th>
+                    <th>Subject Result</th>
                     
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>CSE001</td>
-                    <td>Java</td>
-                    <td>100</td>
-                    <td>35</td>
-                    <td>65</td>
-                    <td>PASS</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>CSE001</td>
-                    <td>Java</td>
-                    <td>100</td>
-                    <td>35</td>
-                    <td>65</td>
-                    <td>PASS</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>CSE001</td>
-                    <td>Java</td>
-                    <td>100</td>
-                    <td>35</td>
-                    <td>65</td>
-                    <td>PASS</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>CSE001</td>
-                    <td>Java</td>
-                    <td>100</td>
-                    <td>35</td>
-                    <td>65</td>
-                    <td>PASS</td>
-                </tr>
+                {
+                    resultDetails.map((data,index) => {
+                        <tr key = {index}>
+                            <td>{index+1}</td>
+                            <td>{data.code}</td>
+                            <td>{data.subject}</td>
+                            <td>{data.max_marks}</td>
+                            <td>{data.min_marks}</td>
+                            <td>{data.obtained_marks}</td>
+                            <td>{data.result}</td>
+                        </tr>
+                    })
+                }
             </tbody>
 
             <thead>
                 <tr>
                     <th colSpan={3}>Grand Total</th>
-                    <td>400</td>
-                    <td>140</td>
-                    <td>260</td>
+                    <td>{getTotalMarks('max_marks')}</td>
+                    <td>{getTotalMarks('min_marks')}</td>
+                    <td>{getTotalMarks('obtained_marks')}</td>
                     <td>PASS</td>
                 </tr>
                

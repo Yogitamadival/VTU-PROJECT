@@ -13,7 +13,7 @@ import CertificateIssused from './Screens/CertificateIssused'
 import ExaminationGuidlines from './Screens/ExaminationGuidlines'
 import ExaminationApplication from './Screens/ExaminationApplication'
 import Result from './Screens/Result'
-import FinalResultScreen from './Screens/FinalResultScreen';
+import FinalResultScreen from './Screens/FinalResultScreen'
 // import ComputerScienceEngg  from './Screens/ComputerScienceEngg '
 // import CivilEngg  from './Screens/CivilEngg '
 // import ElectronicsCommunicationEngg  from './Screens/ElectronicsCommunicationEngg '
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route path='/Guidlines' element={<ExaminationGuidlines />}/>
       <Route path='/Application' element={<ExaminationApplication />}/>
       <Route path='/results' element={<Result />}/>
-      <Route path='/resultpage' element={<FinalResultScreen />}/>
+      <Route path='/resultpage/:id' element={<FinalResultScreen />}/>
       {/* <Route path='/computerscience' element={<ComputerScienceEngg />}/>
       <Route path='/Civil Engg' element={<CivilEngg />}/>
       <Route path='/Electronics' element={<ElectronicsCommunicationEngg />}/> */}
